@@ -129,6 +129,32 @@
     </div>
   </section>
 
+  <!-- Section: Visitors -->
+  <section class="section section-visitors blue lighten-4">
+    <div class="row">
+      <div class="col s12 m6 l8">
+        <div class="card-panel">
+          <div id="chartContainer" style="height:300px; width: 100%;"></div>
+        </div>
+      </div>
+      <div class="col s12 m6 l4">
+        <!-- Latest Comments -->
+        <ul class="collection with-header latest-comments">
+          <li class="collection-header">
+            <h5>Latest Comments</h5>
+          </li>
+          <li class="collection-item avatar">
+            <img src="img/person1.jpg" alt="" class="circle">
+            <span class="title">John Doe</span>
+            <p class="truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod illum fugiat facilis harum, assumenda blanditiis! Adipisci commodi tempore totam nesciunt nisi eveniet in enim fugiat, blanditiis, harum omnis corporis libero.</p>
+            <a href="" class="approve green-text">Approve</a>
+            <a href="" class="deny red-text">Deny</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Preloader -->
   <div class="loader preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
@@ -147,7 +173,10 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script>
+ <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <script src="js/chart.js"></script>
+
+ <script>
     // Hide Section
     $('.section').hide();
 
