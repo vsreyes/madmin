@@ -13,7 +13,7 @@
   <title>Custom Materialize Theme</title>
 </head>
 
-<body>
+<body class="grey lighten-4">
   <nav class="blue darken-2">
     <div class="container">
       <div class="nav-wrapper">
@@ -186,16 +186,66 @@
               </thead>
               <tbody>
                 <tr>
-                  <td></td>
+                  <td>Post One</td>
+                  <td>Web Development</td>
+                  <td>
+                    <a href="details.html" class="btn blue lighten-2">Details</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Post Two</td>
+                  <td>Graphic Design</td>
+                  <td>
+                    <a href="details.html" class="btn blue lighten-2">Details</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Post Three</td>
+                  <td>Web Development</td>
+                  <td>
+                    <a href="details.html" class="btn blue lighten-2">Details</a>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Quick Todos</span>
+            <form id="todo-form">
+              <div class="input-field">
+                <input type="text" id="todo" placeholder="Add Todo...">
+              </div>
+            </form>
+            <ul class="collection todos">
+              <li class="collection-item">
+                <div> Todo One 
+                  <a href="#!" class="secondary-content delete">
+                    <i class="material-icons">close</i>
+                  </a>
+                </div>
+              </li>
+              <li class="collection-item">
+                <div> Todo Two 
+                  <a href="#!" class="secondary-content delete">
+                    <i class="material-icons">close</i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer class="section blue darken-2 white-text center">
+    <p>Madmin Panel Copyright &copy; 2021</p>
+  </footer>
 
   <!-- Preloader -->
   <div class="loader preloader-wrapper big active">
@@ -254,7 +304,32 @@
       $('.deny').click(function(e) {
         Materialize.toast('Comment Denied', 3000);
         e.preventDefault();
-      })
+      });
+
+      // Quick Todos
+      $('#todo-form').submit(function(e) {
+        const output = `<li class="collection-item">
+                <div>${$('#todo').val()}
+                  <a href="#!" class="secondary-content delete">
+                    <i class="material-icons">close</i>
+                  </a>
+                </div>
+              </li>`;
+
+        $('.todos').append(output);
+        
+        Materialize.toast('Todo Added', 3000);
+
+        e.preventDefault();
+      });
+
+      // Delete Todos
+      $('todos').on('click', '.delete', function(e) {
+        $(this).parent().parent().remove();
+        Materialize.toast('Todo Removed', 3000);
+
+        e.preventDefault();
+      });
 
     });
     }, 1000)
