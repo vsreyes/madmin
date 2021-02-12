@@ -301,6 +301,50 @@
     </div>
   </div>
 
+    <!-- Add Category Modal -->
+    <div id="category-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add Category</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="title">
+            <label for="title">Title</label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close btn blue white-text">Submit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="user-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add User</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="name">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field">
+            <input type="email" id="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="password">
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="password2">
+            <label for="password2">Confirm Password</label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close btn blue white-text">Submit</a>
+        </div>
+      </div>
+    </div>
+
   <!-- Preloader -->
   <div class="loader preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
@@ -319,8 +363,9 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
- <script src="js/chart.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+  <script src="js/chart.js"></script>
 
  <script>
     // Hide Section
@@ -339,6 +384,9 @@
 
       // Init Modal
       $('.modal').modal();
+
+      // Init Select
+      $('select').material_select();
 
       // Counter
       $('.count').each(function() {
@@ -387,6 +435,8 @@
 
         e.preventDefault();
       });
+
+      CKEDITOR.replace( 'body' );
 
     });
     }, 1000)
